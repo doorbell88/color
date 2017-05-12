@@ -19,13 +19,13 @@ color() {
         echo "  Set text foreground to an RGB color."
         echo "  (R,G,B values range from 0-5.)"
         echo
-        echo "  Usage:"
-        echo "    color [-h | --help]  Show this message"
-        echo "    color [RGB]          Set color to RGB (values 0-5 accepted)"
-        echo "    color                Set back to normal"
+        echo "Usage:"
+        echo "  color [-h | --help]  Show this message"
+        echo "  color [RGB]          Set color to RGB (values 0-5 accepted)"
+        echo "  color                Set back to normal"
         echo
-        echo "  Example:  Setting the text color to bright yellow"
-        echo "    color 550"
+        echo "Example:  Setting the text color to bright yellow"
+        echo "  color 550"
         echo "---------------------------------------------------------------"
         echo
 
