@@ -1,8 +1,8 @@
 # color
 function to change terminal text color
 
-hint: Put this in ~/bin and add as an alias to your .bash_profile:
-alias c='~/.bin/color'
+hint: Add as an alias to your .bash_profile:
+alias c='/PATH/TO/COLOR/color'
 
 ---------------------------------------------------------------
 color
