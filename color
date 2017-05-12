@@ -1,0 +1,46 @@
+#!/bin/bash
+
+color() {
+    # ensure terminal supports 256 colors
+    if [ "$TERM" = 'xterm' ] || [ "$TERM" = 'screen' ]; then
+        export TERM="$TERM-256color"
+    fi
+
+    # if there are no arguments, return color to normal
+    if [ $# = 0 ]; then
+        tput sgr0
+        return
+
+    # show help message
+    elif [ "$1" = "-h" ] || [ "$1" = "--help" ] ; then
+        echo
+        echo "---------------------------------------------------------------"
+        echo "color"
+        echo "  Set text foreground to an RGB color."
+        echo "  (R,G,B values range from 0-5.)"
+        echo
+        echo "  Usage:"
+        echo "    color [-h | --help]  Show this message"
+        echo "    color [RGB]          Set color to RGB (values 0-5 accepted)"
+        echo "    color                Set back to normal"
+        echo
+        echo "  Example:  Setting the text color to bright yellow"
+        echo "    color 550"
+        echo "---------------------------------------------------------------"
+        echo
+
+    # otherwise, process the argument and change font foreground color
+    else
+        R=$(echo $1 | cut -c1)
+        G=$(echo $1 | cut -c2)
+        B=$(echo $1 | cut -c3)
+
+        red=$((R*36))
+        green=$((G*6))
+        blue=$((B))
+
+        color=$((16 + red + green + blue))
+
+        tput setaf $color
+    fi
+}
